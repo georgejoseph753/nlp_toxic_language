@@ -35,7 +35,7 @@ testPadded = pad_sequences(testSequences, maxlen=200, padding='post', truncating
 
 # Building the model
 model = Sequential([
-    Embedding(input_dim=10000, output_dim=64),
+    Embedding(input_dim=10000, output_dim=64, input_length=200),
     Bidirectional(LSTM(64)),
     Dense(64, activation='relu'),
     Dense(6, activation='sigmoid')
